@@ -1,8 +1,8 @@
-# New Music Organizing Caucus Real Wage Database form
+# Emergency INDEX Vol. 8 Submission form
 
-view: [https://nmoc-real-wage-database.glitch.me/](https://nmoc-real-wage-database.glitch.me/)  
-edit: [https://glitch.com/edit/#!/nmoc-real-wage-database](https://glitch.com/edit/#!/nmoc-real-wage-database)  
-github: [https://github.com/nmoc-real-wage-database](https://github.com/nmoc-real-wage-database) 
+view: [https://emergency-index-submission-2018.glitch.me/](https://emergency-index-submission-2018.glitch.me/)  
+edit: [https://glitch.com/edit/#!/emergency-index-submission-2018](https://glitch.com/edit/#!/emergency-index-submission-2018)  
+github: [https://github.com/emergencyindex/emergency-index-submission-2018](https://github.com/emergencyindex/emergency-index-submission-2018) 
 
 🗣 [Create React App](https://github.com/facebookincubator/create-react-app)  
 🗣 [Material-UI](https://material-ui.com/)
@@ -11,7 +11,7 @@ github: [https://github.com/nmoc-real-wage-database](https://github.com/nmoc-rea
 
 * edit the file here in glitch; remember: filez AUTOSAVE!
 * Run the command `npm run build` in the console
-* * to open glitch console: click **Tools** (button) **>** **Terminal** (button on the top of the little window that opens at the bottom of the window)
+* * to open glitch console: click **Logs** (button) **>** **Console** (button on the top of the little window that opens at the bottom of the window)
 
 **note about glitch & watch.json:** generally glitch is a hot-reload environment where changes you make automatically get saved and are live. this can be a little troublesome as delay in typing can deploy buggy code. enter the `watch.json` file. this will prevent automatic refresh on the files specified within. anything un-related to the react app (files in the `src/` directory) will need this file "touched" (e.g. changed) to re-deploy the whole site. 
 
@@ -40,7 +40,7 @@ ProjectForm includes a number of items for each individual response field that a
 }
 ```
 
-**NOTE:** if you decide to add/remove response field items then new submissions will not appear correctly (columns will not match up) on the google spreadsheet because the fields get mapped based on the fields in the first response. see: [server.js:143:25](https://glitch.com/edit/#!/nmoc-real-wages-database?path=server.js:143:25) 
+**NOTE:** if you decide to add/remove response field items then new submissions will not appear correctly (columns will not match up) on the google spreadsheet because the fields get mapped based on the fields in the first response. see: [server.js:143:25](https://glitch.com/edit/#!/emergency-index-submission-2018?path=server.js:143:25) 
 ```js
 const fields = data[0].project_form.items.map( (item, idx) => ({label: item.id, value: `project_form.items.${idx}.value`, default: 'NULL'}) )
 ```  
@@ -70,7 +70,7 @@ notes about `server.js`
 * generating CSV (via `json2csv` npm module) for google spreadsheet (fetches all .json files from s3 bucket); CSV can be imported into google sheet like so:
 
 ```
-=IMPORTDATA("https://nmoc-real-wage-database.glitch.me/submissions?key=WHATEVER_QUERY_KEY_SET_IN_.env")
+=IMPORTDATA("https://emergency-index-submission-2018.glitch.me/submissions?key=WHATEVER_QUERY_KEY_SET_IN_.env")
 ```
 
 ## MISC

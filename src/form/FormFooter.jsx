@@ -6,11 +6,9 @@ class FormFooter extends React.Component {
   render() {
     return (
       <Typography className="wantsToHelp" component="p">
-        If you would like to become involved in the 
-        New Music Organizing Caucus, visit: 
-        <a href="https://newmusicorganizingcaucus.org"
-            target="_blank"
-            rel="noopener noreferrer">https://newmusicorganizingcaucus.org</a>
+        If you are interested in hosting an Emergency Index-related event or helping 
+        with the production of Emergency Index, please email 
+        emergency@uglyducklingpresse.org
       </Typography>
     );
   }
