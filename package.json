@@ -1,23 +1,23 @@
 {
-  "name": "emergency-index-submission-2018",
-  "description": "a form for submitting projects to the VOL. 8 EMERGENCY INDEX (2018)",
-  "homepage": "https://emergency-index-submission-2018.glitch.me/",
+  "name": "nmoc-real-wage-database",
+  "description": "a form for submitting wage information to the NMOC Real Wages Database",
+  "homepage": "https://nprocmoc-real-wage-database.glitch.me/",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "if-env": "^1.0.4",
-    "express": "^4.16.4",
     "@material-ui/core": "^3.6.2",
-    "multer": "^1.4.1",
-    "aws-sdk": "^2.382.0",
-    "googleapis": "^36.0.0",
-    "image-size": "^0.6.3",
+    "aws-sdk": "^2.748.0",
     "body-parser": "^1.18.3",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
-    "react-scripts": "^1.1.4",
     "dotenv": "^6.2.0",
-    "json2csv": "^4.3.2"
+    "express": "^4.16.4",
+    "googleapis": "^59.0.0",
+    "if-env": "^1.0.4",
+    "image-size": "^0.6.3",
+    "json2csv": "^4.3.2",
+    "multer": "^1.4.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.3"
   },
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run prod:start || npm run dev:start",
@@ -30,6 +30,18 @@
     "node": "10.x"
   },
   "repository": {
-    "url": "https://api.glitch.com/emergency-index-submission-2018/git"
+    "url": "https://api.glitch.com/nmoc-real-wage-database/git"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

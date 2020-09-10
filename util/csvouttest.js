@@ -1,12 +1,12 @@
 const aws = require('aws-sdk');
-const spacesEndpoint = new aws.Endpoint('sfo2.digitaloceanspaces.com');
+const spacesEndpoint = new aws.Endpoint('https://dynamodb.us-east-2.amazonaws.com');
 const s3 = new aws.S3({
   endpoint: spacesEndpoint
 });
 
 
 let keys = [];
-  s3.listObjects({Bucket:'emergencyindex', Prefix: 'submissions/'})
+  s3.listObjects({Bucket:'nmoc', Prefix: 'wages/'})
   .on('success', function handlePage(item) {
     item.data.Contents.forEach(function(item) {
       if(item.Key.match(/.json/)){
@@ -26,7 +26,7 @@ let keys = [];
       promises.push(
         new Promise(function(resolve, reject) {
           s3.getObject({
-           Bucket: 'emergencyindex', 
+           Bucket: 'nmoc', 
            Key: k
           }, function(err, data) {
             if (err){
@@ -50,7 +50,6 @@ let keys = [];
       console.log('promises data:', data);
       const json2csv = require('json2csv').parse;
       const fields = data[0].project_form.items.map( (item, idx) => ({label: item.id, value: `project_form.items.${idx}.value`, default: 'NULL'}) )
-      fields.push({label: 'photoUrl', value: 'photoUrl', default: 'NULL'})
       fields.push({label: 'already_submitted', value: 'project_form.already_submitted', default: 'NULL'})
       fields.push({label: 'validationError', value: 'validationError', default: 'NO'})
       

@@ -16,9 +16,9 @@ const jwt = new google.auth.JWT(
   process.env.PRIVATE_KEY,
   scopes
 )
-const spreadsheetId = '1hmEYFZlpf0GV1kG2lZophXwzUSKL20v6nDycJVElAcs'
+const spreadsheetId = '1fDB50nHAhzDCOPmCaausDNh-XHiPBx84ZDfWKrdvoGc'
 const range = 'Sheet1!A1:Z1'
-const folderId = '197tH3AXOSgtHawh4Rmp_dT9k9hjtWafl';
+const folderId = '1p1Qv6cURKjruxeibg-PxnsbTb4W-Q9Ar';
 const fileMetadata = {
   'name': 'test',
   parents: [folderId]

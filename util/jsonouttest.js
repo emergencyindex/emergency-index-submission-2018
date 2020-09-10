@@ -1,5 +1,5 @@
 const aws = require('aws-sdk');
-const spacesEndpoint = new aws.Endpoint('sfo2.digitaloceanspaces.com');
+const spacesEndpoint = new aws.Endpoint('https://dynamodb.us-east-2.amazonaws.com');
 const s3 = new aws.S3({
   endpoint: spacesEndpoint
 });
@@ -7,7 +7,7 @@ const s3 = new aws.S3({
 
 let keys = [];
 
-s3.listObjects({Bucket:'emergencyindex'})
+s3.listObjects({Bucket:'nmoc'})
 .on('success', function handlePage(item) {
   item.data.Contents.forEach(function(item) {
     if(item.Key.match(/.json/)){
@@ -32,7 +32,7 @@ function getData(){
     promises.push(
       new Promise(function(resolve, reject) {
         s3.getObject({
-         Bucket: 'emergencyindex', 
+         Bucket: 'nmoc', 
          Key: k
         }, function(err, data) {
           if (err){
