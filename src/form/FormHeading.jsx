@@ -15,7 +15,10 @@ class FormHeading extends React.Component {
     return (
       <div className={classes.root}>
         <Typography variant="h3" component="h3">
-          NMOC: Industry Wages Questionnaire
+          Emergency INDEX
+        </Typography>
+        <Typography variant="h4" component="h4">
+          Vol. 8 Submissions
         </Typography>
       </div>
     );
