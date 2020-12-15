@@ -2,7 +2,7 @@
 
 view: [https://emergency-index-submission-2020.glitch.me/](https://emergency-index-submission-2020.glitch.me/)  
 edit: [https://glitch.com/edit/#!/emergency-index-submission-2020](https://glitch.com/edit/#!/emergency-index-submission-2020)  
-github: [https://github.com/emergencyindex/emergency-index-submission-2020](https://github.com/emergencyindex/emergency-index-submission-2020) 
+github: [https://github.com/emergencyindex/emergency-index-submission](https://github.com/emergencyindex/emergency-index-submission) 
 
 🗣 [Create React App](https://github.com/facebookincubator/create-react-app)  
 🗣 [Material-UI](https://material-ui.com/)
@@ -67,19 +67,17 @@ notes about `server.js`
 * serves the React app (located in the `dist/` folder)
 * processing image uploads (via `multer` & `image-size` npm module; stored in `/tmp/` then sent to digitalocean s3-compatible storage); validates file type (.tif, .jpg, & .png) and image dimensions (at least 5x7 inches @300 dpi)
 * processing submissions (.json files stored in s3 bucket)
-* generating CSV (via `json2csv` npm module) for google spreadsheet (fetches all .json files from s3 bucket); CSV can be imported into google sheet like so:
+* generating CSV (via `json2csv` npm module) for google spreadsheet (fetches all .json files from s3 bucket); CSV can be imported into google sheet
+
+## google spreadsheet import
+
+use this formula in cell A:1
 
 ```
 =IMPORTDATA("https://emergency-index-submission-2020.glitch.me/submissions?key=WHATEVER_QUERY_KEY_SET_IN_.env")
 ```
 
 ## MISC
-
-### Remixing in Glitch
-
-To make the auto-reload feature work:
-
-* Disable the "Refresh App on Changes" checkbox in your user menu (top right).
 
 ### Changes made to the original boilerplate
 
