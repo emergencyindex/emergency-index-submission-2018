@@ -1,23 +1,25 @@
 {
-  "name": "emergency-index-submission-2018",
-  "description": "a form for submitting projects to the VOL. 8 EMERGENCY INDEX (2018)",
-  "homepage": "https://emergency-index-submission-2018.glitch.me/",
+  "name": "emergency-index-submission-2020",
+  "description": "a form for submitting projects to the VOL. 10 EMERGENCY INDEX (2020)",
+  "homepage": "https://emergency-index-submission-2020.glitch.me/",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
     "if-env": "^1.0.4",
-    "express": "^4.16.4",
-    "@material-ui/core": "^3.6.2",
-    "multer": "^1.4.1",
-    "aws-sdk": "^2.382.0",
-    "googleapis": "^36.0.0",
-    "image-size": "^0.6.3",
-    "body-parser": "^1.18.3",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
-    "react-scripts": "^1.1.4",
-    "dotenv": "^6.2.0",
-    "json2csv": "^4.3.2"
+    "express": "^4.17.1",
+    "@material-ui/core": "^4.11.2",
+    "multer": "^1.4.2",
+    "aws-sdk": "^2.809.0",
+    "googleapis": "^65.0.0",
+    "image-size": "^0.9.3",
+    "body-parser": "^1.19.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "^4.0.0",
+    "dotenv": "^8.2.0",
+    "json2csv": "^5.0.3",
+    "country-list": "^2.1.0",
+    "datasets-us-states-names": "^1.0.0"
   },
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run prod:start || npm run dev:start",
@@ -30,6 +32,18 @@
     "node": "10.x"
   },
   "repository": {
-    "url": "https://api.glitch.com/emergency-index-submission-2018/git"
+    "url": "https://api.glitch.com/emergency-index-submission-2020/git"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

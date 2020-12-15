@@ -1,8 +1,8 @@
-# Emergency INDEX Vol. 8 Submission form
+# Emergency INDEX Vol. 10 Submission form
 
-view: [https://emergency-index-submission-2018.glitch.me/](https://emergency-index-submission-2018.glitch.me/)  
-edit: [https://glitch.com/edit/#!/emergency-index-submission-2018](https://glitch.com/edit/#!/emergency-index-submission-2018)  
-github: [https://github.com/emergencyindex/emergency-index-submission-2018](https://github.com/emergencyindex/emergency-index-submission-2018) 
+view: [https://emergency-index-submission-2020.glitch.me/](https://emergency-index-submission-2020.glitch.me/)  
+edit: [https://glitch.com/edit/#!/emergency-index-submission-2020](https://glitch.com/edit/#!/emergency-index-submission-2020)  
+github: [https://github.com/emergencyindex/emergency-index-submission-2020](https://github.com/emergencyindex/emergency-index-submission-2020) 
 
 🗣 [Create React App](https://github.com/facebookincubator/create-react-app)  
 🗣 [Material-UI](https://material-ui.com/)
@@ -40,7 +40,7 @@ ProjectForm includes a number of items for each individual response field that a
 }
 ```
 
-**NOTE:** if you decide to add/remove response field items then new submissions will not appear correctly (columns will not match up) on the google spreadsheet because the fields get mapped based on the fields in the first response. see: [server.js:143:25](https://glitch.com/edit/#!/emergency-index-submission-2018?path=server.js:143:25) 
+**NOTE:** if you decide to add/remove response field items then new submissions will not appear correctly (columns will not match up) on the google spreadsheet because the fields get mapped based on the fields in the first response. see: [server.js:143:25](https://glitch.com/edit/#!/emergency-index-submission-2020?path=server.js:143:25) 
 ```js
 const fields = data[0].project_form.items.map( (item, idx) => ({label: item.id, value: `project_form.items.${idx}.value`, default: 'NULL'}) )
 ```  
@@ -70,7 +70,7 @@ notes about `server.js`
 * generating CSV (via `json2csv` npm module) for google spreadsheet (fetches all .json files from s3 bucket); CSV can be imported into google sheet like so:
 
 ```
-=IMPORTDATA("https://emergency-index-submission-2018.glitch.me/submissions?key=WHATEVER_QUERY_KEY_SET_IN_.env")
+=IMPORTDATA("https://emergency-index-submission-2020.glitch.me/submissions?key=WHATEVER_QUERY_KEY_SET_IN_.env")
 ```
 
 ## MISC

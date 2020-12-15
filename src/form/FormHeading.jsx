@@ -18,7 +18,7 @@ class FormHeading extends React.Component {
           Emergency INDEX
         </Typography>
         <Typography variant="h4" component="h4">
-          Vol. 8 Submissions
+          Vol. 10 Submissions
         </Typography>
       </div>
     );

@@ -1,5 +1,8 @@
-const blankValidator = (value) => value.length === 0;
-const descriptionValidator = (value) => {
+import FormField from "../components/FormField";
+import CountrySelect from "../components/CountrySelect";
+
+const blankValidator = value => value.length === 0;
+const descriptionValidator = value => {
   const current_length = value.trim().split(/\s+/).length;
   return current_length > 400 || current_length < 2;
 };
@@ -8,14 +11,26 @@ const ProjectForm = {
   project_form: {
     items: [
       {
-        id: "contact_name",
-        label: "CONTACT NAME",
+        id: "contact_first_name",
+        label: "CONTACT FIRST NAME",
         help: "This will not be published.",
         value: "",
         required: true,
         error: false,
-        validator: blankValidator
-      },{
+        validator: blankValidator,
+        component: FormField
+      },
+      {
+        id: "contact_last_name",
+        label: "CONTACT LAST NAME",
+        help: "This will not be published.",
+        value: "",
+        required: true,
+        error: false,
+        validator: blankValidator,
+        component: FormField
+      },
+      {
         id: "contact_email",
         label: "CONTACT EMAIL",
         help:
@@ -23,24 +38,31 @@ const ProjectForm = {
         value: "",
         required: true,
         error: false,
-        validator: blankValidator
-      },{
+        validator: blankValidator,
+        component: FormField
+      },
+      {
         id: "contact_phone",
         label: "CONTACT PHONE NUMBER",
         help: "This will not be published. A phone number is required.",
         value: "",
         required: true,
         error: false,
-        validator: blankValidator
-      },{
+        validator: blankValidator,
+        component: FormField
+      },
+      {
         id: "title",
         label: "TITLE OF PIECE",
-        help: "This will be printed in all caps in the heading of the work, however we will use American Title Capitalization style for the body of the text, unless there is unusual capitalization indicated here.",
+        help:
+          "This will be printed in all caps in the heading of the work, however we will use American Title Capitalization style for the body of the text, unless there is unusual capitalization indicated here.",
         value: "",
         required: true,
         error: false,
-        validator: blankValidator
-      },{
+        validator: blankValidator,
+        component: FormField
+      },
+      {
         id: "contributor",
         label: "NAME(S) OF CREATOR(S) OR GROUP",
         help:
@@ -48,35 +70,42 @@ const ProjectForm = {
         value: "",
         required: true,
         error: false,
-        validator: blankValidator
-      },{
+        validator: blankValidator,
+        component: FormField
+      },
+      {
         id: "collaborators",
         label: "Name(s) of Other Collaborators",
         help:
-          "This will appear as a sub-byline. Please only list key collaborators; do not include sponsoring and producing institutions, curators, festivals, audience participants, etc. (if absolutely necessary, these specifics can be included at the end of your performance description). Because space is limited, please do NOT include the roles of the key collaborators; e.g., (composer) Bjork.",
+          "This will appear as a sub-byline. Please only list key collaborators; do not include sponsoring and producing institutions, curators, festivals, audience participants, etc.",
         value: "",
         required: false,
         error: false,
-        validator: blankValidator
-      },{
+        validator: blankValidator,
+        component: FormField
+      },
+      {
         id: "date_first_performed",
         label: "Date of First Performance",
         help:
-          "If the performance was durational, indicate the start date. ***IF THE FIRST PERFORMANCE OF YOUR WORK PRECEDED JANUARY 1, 2018, IT CANNOT BE ACCEPTED.***",
+          "If the performance was durational, indicate the start date. ***IF THE FIRST PERFORMANCE OF YOUR WORK PRECEDED JANUARY 1, 2020, IT CANNOT BE ACCEPTED.***",
         value: "",
         required: true,
         error: false,
-        validator: blankValidator
-      },{
+        validator: blankValidator,
+        component: FormField
+      },
+      {
         id: "times_performed",
-        label: "How many times was it performed in 2018?",
-        help:
-          'Please type a number.',
+        label: "How many times was it performed in 2020?",
+        help: "Please type a number.",
         value: "",
         required: true,
         error: false,
-        validator: blankValidator
-      },{
+        validator: blankValidator,
+        component: FormField
+      },
+      {
         id: "venue",
         label: "Venue where the first performance occurred.",
         help:
@@ -84,54 +113,62 @@ const ProjectForm = {
         value: "",
         required: true,
         error: false,
-        validator: blankValidator
-      },{
+        validator: blankValidator,
+        component: FormField
+      },
+      {
         id: "city",
         label: "City where the first performance occurred.",
         help: "",
         value: "",
         required: true,
         error: false,
-        validator: blankValidator
-      },{
+        validator: blankValidator,
+        component: FormField
+      },
+      {
         id: "state_country",
-        label: "Country (or state) where the first performance occurred.",
+        label: "Country (or US state) where the first performance occurred.",
         help:
-          "If within US, list the state instead of the country: e.g., California. If outside US, list the country: e.g., Vietnam.",
+          "If within USA, choose the state instead of the country: e.g., California. If outside US, choose the country: e.g., Viet Nam.",
         value: "",
         required: true,
         error: false,
-        validator: blankValidator
-      },{
+        validator: blankValidator,
+        component: CountrySelect
+      },
+      {
         id: "home",
-        label:
-          "Where are the creators based? (to be published; optional)",
+        label: "Where are the creators based?",
         help:
           'Listing your base can help local audiences find you. Please list City, State (if in the US), and Country (if outside of the US). If the creator lives in multiple cities, use "&": e.g., Brooklyn, NY & Tokyo, Japan. If group members are based in different cities, use slashes: e.g., New York, NY / Tokyo, Japan / Paris, France.',
         value: "",
-        required: false,
+        required: true,
         error: false,
-        validator: blankValidator
+        validator: blankValidator,
+        component: FormField
       },
       {
         id: "published_contact",
         label: "Creator/Group contact email (to be published; optional)",
-        help:
-          "We cannot include more than one email address.",
+        help: "We cannot include more than one email address.",
         value: "",
         required: false,
         error: false,
-        validator: blankValidator
-      },{
+        validator: blankValidator,
+        component: FormField
+      },
+      {
         id: "links",
         label: "Creator/Group website (to be published; optional)",
-        help:
-          "We cannot include more than one website.",
+        help: "We cannot include more than one website.",
         value: "",
         required: false,
         error: false,
-        validator: blankValidator
-      },{
+        validator: blankValidator,
+        component: FormField
+      },
+      {
         id: "description",
         label: "Description of performance",
         help:
@@ -139,8 +176,10 @@ const ProjectForm = {
         value: "",
         required: true,
         error: false,
-        validator: descriptionValidator
-      },{
+        validator: descriptionValidator,
+        component: FormField
+      },
+      {
         id: "photo_credit",
         label: "Image Credit",
         help:
@@ -148,14 +187,17 @@ const ProjectForm = {
         value: "",
         required: true,
         error: false,
-        validator: blankValidator
+        validator: blankValidator,
+        component: FormField
       }
     ],
     already_submitted: undefined,
-    inProgress: undefined 
+    inProgress: undefined
   },
-  image_help: "It should not be a flier, poster, or promotional material. You must have all permissions to publish the image. The published image will be 5x7 (portrait or landscape orientation) and black & white (grayscale). We will adjust any image sent to this format, cropping if necessary. Please deliver files in the highest resolution possible at a minimum 300 DPI at 5x7 inches or 1500 x 2100 pixels. JPEG or TIFF files preferred",
-  already_submitted_help: "Have you, or any of the people named above, already submitted a performance for this volume of Emergency Index?"
-}
+  image_help:
+    "It should not be a flier, poster, or promotional material. You must have all permissions to publish the image. The published image will be 5x7 (portrait or landscape orientation) and black & white (grayscale). We will adjust any image sent to this format, cropping if necessary. Please deliver files in the highest resolution possible at a minimum 300 DPI at 5x7 inches or 1500 x 2100 pixels. JPEG or TIFF files preferred",
+  already_submitted_help:
+    "Have you, or any of the people named above, already submitted a performance for this volume of Emergency Index?"
+};
 
-export default ProjectForm
+export default ProjectForm;

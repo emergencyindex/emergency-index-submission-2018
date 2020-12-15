@@ -631,8 +631,8 @@ to attach them to the start of each source file to most effectively
 state the exclusion of warranty; and each file should have at least
 the "copyright" line and a pointer to where the full notice is found.
 
-    a form for submitting projects to the VOL. 8 EMERGENCY INDEX (2018)
-    Copyright (C) 2019  edward sharp
+    a form for submitting projects to the VOL. 10 EMERGENCY INDEX (2020)
+    Copyright (C) 2020  edward sharp
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -652,7 +652,7 @@ Also add information on how to contact you by electronic and paper mail.
   If the program does terminal interaction, make it output a short
 notice like this when it starts in an interactive mode:
 
-    emergency-index-submission-2018  Copyright (C) 2019  edward sharp
+    emergency-index-submission-2020  Copyright (C) 2020  edward sharp
     This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
     This is free software, and you are welcome to redistribute it
     under certain conditions; type `show c' for details.
